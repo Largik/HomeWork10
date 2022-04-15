@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">HomeWork10</string>
+    <string name="location">Location: </string>
+    <string name="calories">Calories: </string>
+    <string name="name">Species name: </string>
+    <string name="biology">Biology: </string>
+    <string name="habitat">Habitat: </string>
+    <string name="availability">Availability: </string>
 </resources>
