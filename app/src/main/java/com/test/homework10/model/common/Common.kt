@@ -1,7 +1,6 @@
-package com.test.homework10.Common
+package com.test.homework10.model.common
 
-import com.test.homework10.Interface.RetrofitServices
-import com.test.homework10.Retrofit.RetrofitClient
+import com.test.homework10.model.retrofit.RetrofitClient
 
 object Common {
     private val BASE_URL = "https://www.fishwatch.gov/api/"

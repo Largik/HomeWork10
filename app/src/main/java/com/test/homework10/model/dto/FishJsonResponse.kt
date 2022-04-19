@@ -1,10 +1,11 @@
-package com.test.homework10.Models
+package com.test.homework10.model.dto
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import com.test.homework10.domain.Fish
 
 @JsonClass(generateAdapter = true)
-data class Fish(
+data class FishJsonResponse(
     @Json(name = "Species Name")
     val speciesName: String? = null,
     @Json(name = "Calories")
@@ -18,6 +19,16 @@ data class Fish(
     @Json(name = "Habitat")
     val habitat: String? = null,
     @Json(name = "Species Illustration Photo")
-    val speciesIllustration: Photo? = null
-)
+    val speciesIllustration: PhotoJsonResponse? = null
+){
+    fun toFish(): Fish = Fish(
+        speciesName = speciesName,
+        biology = biology,
+        location = location,
+        availability = availability,
+        calories = calories,
+        habitat = habitat,
+        speciesIllustration = speciesIllustration?.toPhoto()
+    )
+}
 
