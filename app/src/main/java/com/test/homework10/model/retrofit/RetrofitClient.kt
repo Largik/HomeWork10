@@ -1,5 +1,6 @@
-package com.test.homework10.Retrofit
+package com.test.homework10.model.retrofit
 
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -19,6 +20,7 @@ object RetrofitClient {
             retrofit = Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addConverterFactory(MoshiConverterFactory.create(moshi))
+                .addCallAdapterFactory(CoroutineCallAdapterFactory())
                 .build()
         }
         return retrofit!!
